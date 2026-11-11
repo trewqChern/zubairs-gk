@@ -7,6 +7,8 @@ Digital High-Yield Admission Question Bank & Textbook Transcription for Dhaka Un
 ### 📚 Contents:
 - **`complete.html`**: Master Edition (Pages 1 to 873, 7,350 Questions)
 - **`part2.html`**: International Affairs, Nobel, ICT & Governance (Pages 451 to 873, 4,151 Questions)
-- **`part1.html`**: Bangladesh Affairs, Constitution, Liberation War (Pages 1 to 450, 3,199 Questions)
+- **`part1.html`**: Bangladesh Affairs, Constitution, Liberation War (Pages 1 to 450, 6,209 Questions - Pruned & Deduplicated)
+- **`zubairs_gk_hsc_admission_questions_1_450.txt`**: Raw cleaned text edition (Pages 1 to 450)
+- **`zubairs_gk_hsc_admission_questions_1_450.md`**: Markdown edition (Pages 1 to 450)
 - **`transcription_1_450.html`**: Complete Textbook Digital Transcription (Pages 1 to 450)
 - **`transcription_451_873.html`**: Complete Textbook Digital Transcription (Pages 451 to 873)
