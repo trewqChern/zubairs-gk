@@ -335,11 +335,11 @@
       opacity: 1;
     }
 
-    /* Print Styles (A4 Ultra-Compact Table) */
+    /* Print Styles (A4 Seamless Continuous Table, Zero Wasted White Space) */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 8mm 8mm 10mm 8mm;
+        margin: 6mm 8mm 6mm 8mm;
       }
       body {
         background: #fff !important;
@@ -356,19 +356,29 @@
         margin: 0 !important;
         padding: 0 !important;
       }
+      .table-responsive {
+        overflow: visible !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
       .page-block {
         box-shadow: none !important;
-        border: 0.5pt solid #cbd5e1 !important;
-        border-radius: 2pt !important;
-        margin-bottom: 6pt !important;
-        padding: 4pt 6pt !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        border: none !important;
+        border-top: 0.5pt solid #cbd5e1 !important;
+        border-radius: 0 !important;
+        margin-bottom: 4pt !important;
+        padding: 2pt 0 1pt 0 !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
       }
       .page-heading {
-        margin-bottom: 3pt !important;
+        margin-bottom: 2pt !important;
         padding-bottom: 2pt !important;
         border-bottom: 0.5pt solid #cbd5e1 !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
       }
       .page-pill {
         background: #0f172a !important;
@@ -390,6 +400,15 @@
       .q-table {
         font-size: 7.2pt !important;
         border: 0.5pt solid #94a3b8 !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+        width: 100% !important;
+        border-collapse: collapse !important;
+      }
+      .q-table thead {
+        display: table-header-group !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
       }
       .q-table thead th {
         background-color: #f1f5f9 !important;
@@ -404,6 +423,10 @@
       }
       .th-ans {
         width: 30% !important;
+      }
+      .q-table tbody {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
       }
       .q-table tbody tr {
         page-break-inside: avoid !important;
