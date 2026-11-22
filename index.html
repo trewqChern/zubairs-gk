@@ -252,6 +252,111 @@
       color: var(--text-muted);
     }
 
+    /* Spotlight Mega Card */
+    .spotlight-card {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.08) 100%);
+      border: 2px solid #3b82f6;
+      border-radius: 14px;
+      padding: 1.8rem;
+      position: relative;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.12), 0 8px 10px -6px rgba(59, 130, 246, 0.08);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .spotlight-card:hover {
+      box-shadow: 0 16px 32px -5px rgba(59, 130, 246, 0.18);
+    }
+    [data-theme="dark"] .spotlight-card {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(88, 28, 135, 0.25) 100%);
+      border-color: #60a5fa;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+    .badge-spotlight {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+    }
+    .spotlight-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+    .spotlight-sub {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .btn-spotlight-primary {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    .btn-spotlight-primary:hover {
+      background: linear-gradient(135deg, #1e40af, #1d4ed8);
+      transform: translateY(-1px);
+    }
+    .chunk-accordion {
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .chunk-summary {
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      padding: 0.4rem 0;
+    }
+    .chunk-summary:hover {
+      color: var(--accent);
+    }
+    .chunk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 8px;
+      margin-top: 0.9rem;
+    }
+    .chunk-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.15s;
+    }
+    .chunk-item:hover {
+      border-color: var(--accent);
+      background: rgba(37, 99, 235, 0.05);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .chunk-item span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
     @media (max-width: 640px) {
       .hero h2 { font-size: 1.4rem; }
       .grid { grid-template-columns: 1fr; }
@@ -275,6 +380,55 @@
   </section>
 
   <main class="container">
+    
+    <!-- 🌟 TOP SPOTLIGHT: 15-SUBAGENT MEGA QA TABLE -->
+    <div class="spotlight-card">
+      <span class="card-top-badge badge-spotlight">🔥 ১৫-সাবএজেন্ট মেগা রিলিজ (NEW)</span>
+      <div class="card-header">
+        <div class="card-icon">👑</div>
+        <h4 class="spotlight-title">১৫-সাবএজেন্ট মেগা কিউএনএ মাস্টার টেবিল (Pages 451 to 871)</h4>
+        <div class="spotlight-sub">The Ultimate 15-Subagent High-Yield Admission Q&A Table &bull; আন্তর্জাতিক বিষয়াবলি</div>
+        <div class="card-meta">
+          <span>📄 ৪২১টি সম্পূর্ণ পৃষ্ঠা (৪৫১–৮৭১)</span>
+          <span>🎯 ৪,১২৯টি অথেনটিক প্রশ্ন ও উত্তর</span>
+          <span>📊 ৩-কলাম টেবিল (নং । প্রশ্ন । উত্তর)</span>
+          <span>🤖 ১৫টি সাব-এজেন্ট প্যারালাল এক্সট্রাকশন</span>
+          <span>💡 শতভাগ হাইলাইট সিন্থেসিস ও বিগত MCQ সমাধান</span>
+        </div>
+        <p class="card-desc">
+          জুবায়ের'স জিকে ২য় খণ্ডের (পৃষ্ঠা ৪৫১ হতে ৮৭১) প্রতিটি হাইলাইটেড (&lt;mark&gt;) তথ্যের সাথে পারিপার্শ্বিক প্রসঙ্গের নিখুঁত সমন্বয়ে ১৫টি প্যারালাল সাব-এজেন্ট দ্বারা প্রস্তুতকৃত ৪,১২৯টি উচ্চ-ফলনশীল ভর্তি পরীক্ষার প্রশ্ন ও সরাসরি উত্তরমালা। ঢাকা বিশ্ববিদ্যালয় (DU), রাজশাহী (RU), চট্টগ্রাম (CU), জাহাঙ্গীরনগর (JU) ও GST গুচ্ছ ভর্তি পরীক্ষার জন্য অপ্রয়োজনীয় তথ্য বর্জন করে শতভাগ নির্ভরযোগ্য ও রিয়েল এক্সাম-গ্রেড ৩-কলাম টেবিল সংকলন।
+        </p>
+      </div>
+      <div class="card-actions" style="margin-bottom: 0.5rem;">
+        <a href="zubairs_gk_qa_table_451_871.html" class="btn btn-spotlight-primary">🚀 মেগাট্যাবিল খুলুন (৪,১২৯ Qs)</a>
+        <a href="mega_qa_table_451_871.html" class="btn btn-outline">🔗 অল্টারনেট লিংক</a>
+      </div>
+
+      <!-- 15 Subagent Chunks Dropdown / Quick Links -->
+      <details class="chunk-accordion">
+        <summary class="chunk-summary">
+          <span>📑 ১৫টি সাব-এজেন্ট চ্যাপ্টার চাঙ্ক পৃথকভাবে খুলতে এখানে ক্লিক করুন (Chunk 01 to 15)</span>
+          <span>▾</span>
+        </summary>
+        <div class="chunk-grid">
+          <a href="qa_chunk_01_pages_451_479.html" class="chunk-item"><strong>Chunk 01</strong>: পৃষ্ঠা ৪৫১–৪৭৯ <span>(৩৫৪ Qs)</span></a>
+          <a href="qa_chunk_02_pages_480_507.html" class="chunk-item"><strong>Chunk 02</strong>: পৃষ্ঠা ৪৮০–৫০৭ <span>(২৭৫ Qs)</span></a>
+          <a href="qa_chunk_03_pages_508_535.html" class="chunk-item"><strong>Chunk 03</strong>: পৃষ্ঠা ৫০৮–৫৩৫ <span>(২৪৩ Qs)</span></a>
+          <a href="qa_chunk_04_pages_536_563.html" class="chunk-item"><strong>Chunk 04</strong>: পৃষ্ঠা ৫৩৬–৫৬৩ <span>(২৫৫ Qs)</span></a>
+          <a href="qa_chunk_05_pages_564_591.html" class="chunk-item"><strong>Chunk 05</strong>: পৃষ্ঠা ৫৬৪–৫৯১ <span>(২৪৭ Qs)</span></a>
+          <a href="qa_chunk_06_pages_592_619.html" class="chunk-item"><strong>Chunk 06</strong>: পৃষ্ঠা ৫৯২–৬১৯ <span>(২৪১ Qs)</span></a>
+          <a href="qa_chunk_07_pages_620_647.html" class="chunk-item"><strong>Chunk 07</strong>: পৃষ্ঠা ৬২০–৬৪৭ <span>(২৫৬ Qs)</span></a>
+          <a href="qa_chunk_08_pages_648_675.html" class="chunk-item"><strong>Chunk 08</strong>: পৃষ্ঠা ৬৪৮–৬৭৫ <span>(২৩৬ Qs)</span></a>
+          <a href="qa_chunk_09_pages_676_703.html" class="chunk-item"><strong>Chunk 09</strong>: পৃষ্ঠা ৬৭৬–৭০৩ <span>(৩৩৬ Qs)</span></a>
+          <a href="qa_chunk_10_pages_704_731.html" class="chunk-item"><strong>Chunk 10</strong>: পৃষ্ঠা ৭০৪–৭৩১ <span>(৩০৫ Qs)</span></a>
+          <a href="qa_chunk_11_pages_732_759.html" class="chunk-item"><strong>Chunk 11</strong>: পৃষ্ঠা ৭৩২–৭৫৯ <span>(১৮৭ Qs)</span></a>
+          <a href="qa_chunk_12_pages_760_787.html" class="chunk-item"><strong>Chunk 12</strong>: পৃষ্ঠা ৭৬০–৭৮৭ <span>(৩৩৩ Qs)</span></a>
+          <a href="qa_chunk_13_pages_788_815.html" class="chunk-item"><strong>Chunk 13</strong>: পৃষ্ঠা ৭৮৮–৮১৫ <span>(৩২৬ Qs)</span></a>
+          <a href="qa_chunk_14_pages_816_843.html" class="chunk-item"><strong>Chunk 14</strong>: পৃষ্ঠা ৮১৬–৮৪৩ <span>(২৫১ Qs)</span></a>
+          <a href="qa_chunk_15_pages_844_871.html" class="chunk-item"><strong>Chunk 15</strong>: পৃষ্ঠা ৮৪৪–৮৭১ <span>(২৮৪ Qs)</span></a>
+        </div>
+      </details>
+    </div>
     
     <!-- 1. Full High-Yield Admission Question Banks -->
     <h3 class="section-title">⚡ পূর্ণাঙ্গ ভর্তি সহায়িকা শর্ট প্রশ্ন সম্ভার (Comprehensive Question Banks)</h3>
@@ -374,8 +528,8 @@
           <p class="card-desc">বিশ্ব ইতিহাস, আন্তর্জাতিক সংস্থা, জাতিসংঘ, সীমানা রেখা, রাজধানী ও মুদ্রা সংক্রান্ত ২,৯১৭টি হাইলাইটেড প্রশ্ন ও সমাধান (ধারাবাহিক ১-২৯১৭ নাম্বারিং)। ৩-কলাম টেবিল ফরম্যাট।</p>
         </div>
         <div class="card-actions">
-          <a href="highlighted_part2.html" class="btn btn-primary">🌟 ২য় খণ্ড খুলুন (২,৯১৭ Qs)</a>
-          <a href="highlighted_du_bc.html" class="btn btn-outline">🎯 DU B/C স্পেশাল (৩৭৭ Qs)</a>
+          <a href="zubairs_gk_qa_table_451_871.html" class="btn btn-primary" style="background: #1d4ed8;">⚡ নতুন মেগাট্যাবিল (৪,১২৯ Qs)</a>
+          <a href="highlighted_part2.html" class="btn btn-outline">পুরাতন সংস্করণ (২,৯১৭ Qs)</a>
         </div>
       </div>
 
