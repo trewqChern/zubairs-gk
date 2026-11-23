@@ -5,6 +5,7 @@ Digital High-Yield Admission Question Bank & Textbook Transcription for Dhaka Un
 [https://trewqChern.github.io/zubairs-gk/](https://trewqChern.github.io/zubairs-gk/)
 
 ### 📚 Contents & Direct Links:
+- **`flashcards.html`**: Interactive Smart Flashcards Web App for DU B Unit Top 2000 GK (3D Flip, Leitner Spaced Repetition, Star Bookmarks, Auto-Play, Touch Swipe, Keyboard Shortcuts, Audio Tone Feedback, Dark/Light Theme)
 - **`du_b_unit_gk_top_2000.html`**: DU B Unit High-Yield Top 2000 GK Master Sheet Table (8 Parts, 37 Sections, 2,000 Questions)
 - **`zubairs_gk_top_2000_qa_table.html`**: Direct alias to DU B Unit Top 2000 Master Sheet Table (2,000 Questions)
 - **`admission_questions_1_450.html`**: Cleaned & Deduplicated Part 1 Admission Bank (Pages 1 to 450, 6,209 Questions)
