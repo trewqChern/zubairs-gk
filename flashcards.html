@@ -2,12 +2,20 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>ঢাবি ‘খ’ ইউনিট: ২০০০ জিকে ফ্ল্যাশ-কার্ড মাস্টার (Smart Flashcard App)</title>
-  <meta name="description" content="ঢাকা বিশ্ববিদ্যালয় ‘খ’ ইউনিট ভর্তি পরীক্ষার জন্য জুবায়ের'স জিকে টপ ২০০০ সুপার হাই-ইল্ড ফ্ল্যাশ-কার্ড ও স্পেসড রিপিটেশন সেলফ-টেস্ট ওয়েব অ্যাপ।">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>ঢাবি ‘খ’ ইউনিট: ২০০০ জিকে ফ্ল্যাশ-কার্ড মাস্টার (Smart Mobile Flashcard App)</title>
+  <meta name="description" content="ঢাকা বিশ্ববিদ্যালয় ‘খ’ ইউনিট ভর্তি পরীক্ষার জন্য জুবায়ের'স জিকে টপ ২০০০ সুপার হাই-ইল্ড ফ্ল্যাশ-কার্ড ও স্পেসড রিপিটেশন মোবাইল অ্যাপ।">
+  
+  <!-- Web App Capabilities -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1e3a8a" id="meta-theme-color">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Kalpurush&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #1e3a8a;
@@ -21,15 +29,15 @@
       --warning-light: #fef3c7;
       --danger: #dc2626;
       --danger-light: #fee2e2;
-      --bg: #f1f5f9;
+      --bg: #f8fafc;
       --card-bg: #ffffff;
       --card-border: #cbd5e1;
       --text-main: #0f172a;
       --text-muted: #64748b;
       --ans-color: #0369a1;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 12px -1px rgba(0,0,0,0.08);
-      --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 14px -1px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.12);
       --font-bn: 'Hind Siliguri', 'Kalpurush', 'SolaimanLipi', -apple-system, sans-serif;
     }
 
@@ -46,29 +54,39 @@
       --text-muted: #94a3b8;
       --ans-color: #38bdf8;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
-      --shadow-md: 0 4px 12px -1px rgba(0,0,0,0.5);
+      --shadow-md: 0 4px 14px -1px rgba(0,0,0,0.5);
       --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.6);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
       font-family: var(--font-bn);
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.5;
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       user-select: none;
       -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      touch-action: manipulation;
       transition: background-color 0.2s, color 0.2s;
+      overflow-x: hidden;
     }
 
-    /* Header Nav */
+    /* App Header */
     .app-header {
       background: var(--card-bg);
       border-bottom: 1px solid var(--card-border);
-      padding: 0.75rem 1.25rem;
+      padding: 0.6rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -80,28 +98,29 @@
     .brand-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .brand-icon {
-      font-size: 1.6rem;
+      font-size: 1.35rem;
       background: var(--primary-light);
-      padding: 4px 8px;
+      padding: 4px 7px;
       border-radius: 8px;
+      line-height: 1;
     }
     .brand-title h1 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: var(--text-main);
       line-height: 1.2;
     }
     .brand-title p {
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
     }
     .header-tools {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .tool-btn {
       background: var(--bg);
@@ -111,16 +130,15 @@
       height: 36px;
       border-radius: 8px;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
       transition: all 0.15s;
+      touch-action: manipulation;
     }
-    .tool-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
+    .tool-btn:active {
+      transform: scale(0.92);
     }
     .tool-btn.active {
       background: var(--accent);
@@ -128,22 +146,23 @@
       border-color: var(--accent);
     }
     .link-btn {
-      background: transparent;
+      background: var(--bg);
       border: 1px solid var(--card-border);
       color: var(--text-main);
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 8px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
+      height: 36px;
       transition: all 0.15s;
+      touch-action: manipulation;
     }
-    .link-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .link-btn:active {
+      transform: scale(0.94);
     }
 
     /* Main Container */
@@ -151,163 +170,42 @@
       max-width: 860px;
       width: 100%;
       margin: 0 auto;
-      padding: 1rem 1rem 2.5rem;
+      padding: 0.6rem 0.8rem 1.2rem;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.6rem;
     }
 
-    /* Controls Panel */
-    .controls-panel {
+    /* Progress & Jump Strip */
+    .progress-strip {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 0.9rem 1.1rem;
+      border-radius: 10px;
+      padding: 0.45rem 0.75rem;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
-    }
-    .ctrl-row-1 {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .select-wrap {
-      flex: 1;
-      min-width: 200px;
-    }
-    .select-input {
-      width: 100%;
-      padding: 7px 10px;
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-bn);
-      font-size: 0.88rem;
-      font-weight: 600;
-      outline: none;
-      cursor: pointer;
-    }
-    .select-input:focus {
-      border-color: var(--accent);
-    }
-
-    .ctrl-row-2 {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .filter-chips {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .chip {
-      background: var(--bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: all 0.15s;
-    }
-    .chip:hover {
-      color: var(--text-main);
-      border-color: var(--accent);
-    }
-    .chip.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-    .chip-badge {
-      background: rgba(0,0,0,0.15);
-      padding: 1px 6px;
-      border-radius: 10px;
-      font-size: 0.72rem;
-    }
-    [data-theme="dark"] .chip-badge {
-      background: rgba(255,255,255,0.2);
-    }
-
-    .search-box {
-      position: relative;
-      flex: 1;
-      min-width: 180px;
-      max-width: 260px;
-    }
-    .search-input {
-      width: 100%;
-      padding: 5px 10px 5px 28px;
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-bn);
-      font-size: 0.82rem;
-      outline: none;
-    }
-    .search-input:focus {
-      border-color: var(--accent);
-    }
-    .search-icon {
-      position: absolute;
-      left: 9px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    /* Progress & Tracker Bar */
-    .progress-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
     .progress-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
     }
     .count-stat {
       color: var(--accent);
-      font-size: 0.95rem;
+      font-size: 0.88rem;
     }
-    .progress-bar-bg {
-      width: 100%;
-      height: 6px;
-      background: var(--card-border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #2563eb, #10b981);
-      width: 0%;
-      transition: width 0.3s ease;
-    }
-
-    /* Jump Control */
     .jump-wrap {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
     .jump-input {
-      width: 65px;
+      width: 60px;
       padding: 3px 6px;
       border: 1px solid var(--card-border);
       border-radius: 6px;
@@ -323,25 +221,173 @@
       border: none;
       padding: 4px 8px;
       border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .progress-bar-bg {
+      width: 100%;
+      height: 5px;
+      background: var(--card-border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #10b981);
+      width: 0%;
+      transition: width 0.25s ease;
+    }
+
+    /* Quick Filter Chips (Horizontally Swipeable on Mobile) */
+    .filter-chips-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 1px;
+    }
+    .filter-chips-row::-webkit-scrollbar {
+      display: none;
+    }
+    .chip {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 5px 11px;
+      border-radius: 18px;
       font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+      transition: all 0.15s;
+      touch-action: manipulation;
+    }
+    .chip:active {
+      transform: scale(0.95);
+    }
+    .chip.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+    }
+    .chip-badge {
+      background: rgba(0,0,0,0.12);
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+    }
+    [data-theme="dark"] .chip-badge {
+      background: rgba(255,255,255,0.2);
+    }
+    .chip-toggle {
+      background: var(--primary-light);
+      color: var(--accent);
+      border-color: #bfdbfe;
+    }
+    [data-theme="dark"] .chip-toggle {
+      background: #1e293b;
+      color: #60a5fa;
+      border-color: #3b82f6;
     }
 
-    /* FLASHCARD CONTAINER & 3D FLIP */
+    /* Collapsible Filter & Search Drawer */
+    .filter-drawer {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 0.75rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.2s ease;
+      overflow: hidden;
+    }
+    .filter-drawer.collapsed {
+      display: none;
+    }
+    .drawer-row-1 {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .select-wrap {
+      flex: 1;
+      min-width: 140px;
+    }
+    .select-input {
+      width: 100%;
+      padding: 7px 9px;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-bn);
+      font-size: 0.85rem;
+      font-weight: 600;
+      outline: none;
+    }
+    .search-box {
+      position: relative;
+      width: 100%;
+    }
+    .search-input {
+      width: 100%;
+      padding: 7px 10px 7px 32px;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-bn);
+      font-size: 0.85rem;
+      outline: none;
+    }
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Empty State */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: var(--card-bg);
+      border: 2px dashed var(--card-border);
+      border-radius: 14px;
+    }
+
+    /* 3D FLASHCARD CONTAINER */
     .card-stage {
       perspective: 1200px;
       width: 100%;
-      min-height: 380px;
-      cursor: pointer;
+      flex: 1;
+      min-height: 310px;
+      max-height: 480px;
+      height: calc(100dvh - 250px);
       position: relative;
+      cursor: pointer;
+      margin: 0.2rem 0;
     }
     .flashcard {
       width: 100%;
-      min-height: 380px;
+      height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 0.45s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform 0.42s cubic-bezier(0.4, 0.2, 0.2, 1);
       border-radius: 16px;
     }
     .flashcard.flipped {
@@ -350,54 +396,53 @@
 
     .card-face {
       position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      min-height: 380px;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       background: var(--card-bg);
       border: 2px solid var(--card-border);
       border-radius: 16px;
-      padding: 1.8rem 1.6rem 1.4rem;
+      padding: 1.1rem 1.1rem 0.9rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-shadow: var(--shadow-md);
       transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
     }
-    .card-stage:hover .card-face {
+    .card-face:hover {
       border-color: var(--accent);
-      box-shadow: var(--shadow-lg);
     }
-
     .card-back {
       transform: rotateY(180deg);
       border-color: var(--accent);
-      background: linear-gradient(135deg, var(--card-bg) 0%, rgba(37, 99, 235, 0.04) 100%);
+      background: linear-gradient(135deg, var(--card-bg) 0%, rgba(37, 99, 235, 0.05) 100%);
     }
 
-    /* Card Elements */
+    /* Top Bar inside Card */
     .card-top-bar {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 1rem;
+      gap: 8px;
     }
     .card-badge-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
       align-items: center;
+      gap: 5px;
+      overflow: hidden;
     }
     .part-pill {
       background: #eff6ff;
       color: #1d4ed8;
       border: 1px solid #bfdbfe;
-      padding: 3px 9px;
-      border-radius: 14px;
-      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-size: 0.72rem;
       font-weight: 700;
+      flex-shrink: 0;
     }
     [data-theme="dark"] .part-pill {
       background: #1e3a8a;
@@ -408,74 +453,91 @@
       background: var(--bg);
       color: var(--text-muted);
       border: 1px solid var(--card-border);
-      padding: 3px 9px;
-      border-radius: 14px;
-      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.72rem;
       font-weight: 600;
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .num-pill {
       background: #f1f5f9;
       color: #334155;
       font-weight: 800;
-      padding: 3px 8px;
+      padding: 2px 6px;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      flex-shrink: 0;
     }
     [data-theme="dark"] .num-pill {
       background: #1e293b;
       color: #94a3b8;
     }
-
     .star-btn {
       background: transparent;
       border: none;
-      font-size: 1.4rem;
+      font-size: 1.55rem;
       cursor: pointer;
       color: #cbd5e1;
-      transition: all 0.15s;
+      transition: transform 0.15s, color 0.15s;
+      min-width: 38px;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       line-height: 1;
+      touch-action: manipulation;
+    }
+    .star-btn:active {
+      transform: scale(1.3);
     }
     .star-btn.starred {
       color: #eab308;
-      transform: scale(1.15);
+      transform: scale(1.1);
     }
 
-    /* Question & Answer Content */
+    /* Card Question / Answer Body */
     .card-body {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      padding: 1rem 0.5rem;
+      padding: 0.5rem 0.2rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .q-label {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--accent);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
     }
     .q-text {
-      font-size: 1.38rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--text-main);
-      line-height: 1.5;
+      line-height: 1.48;
+      word-break: break-word;
     }
     .a-label {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--success);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
     }
     .a-text {
-      font-size: 1.35rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: var(--ans-color);
-      line-height: 1.55;
+      line-height: 1.52;
+      word-break: break-word;
     }
     .a-text strong {
       color: #0284c7;
@@ -490,14 +552,14 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-muted);
       border-top: 1px dashed var(--card-border);
-      padding-top: 0.8rem;
+      padding-top: 0.6rem;
     }
     .flip-icon {
-      font-size: 1rem;
+      font-size: 0.95rem;
       animation: rotateHint 2.5s infinite;
     }
     @keyframes rotateHint {
@@ -505,30 +567,36 @@
       50% { transform: rotate(180deg); }
     }
 
-    /* Action Rating Buttons on Back Side */
+    /* Rating Bar on Back Side */
     .rating-bar {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
     }
     .btn-rate {
       flex: 1;
-      padding: 0.65rem 0.5rem;
-      border-radius: 8px;
+      padding: 0.65rem 0.3rem;
+      min-height: 48px;
+      border-radius: 10px;
       border: 1px solid transparent;
       font-family: var(--font-bn);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 2px;
       transition: all 0.15s;
+      touch-action: manipulation;
+    }
+    .btn-rate:active {
+      transform: scale(0.94);
     }
     .btn-rate span.key {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       opacity: 0.7;
     }
     .btn-rate-hard {
@@ -536,82 +604,84 @@
       color: var(--danger);
       border-color: #fca5a5;
     }
-    .btn-rate-hard:hover {
-      background: var(--danger);
-      color: #fff;
-    }
     .btn-rate-good {
       background: var(--warning-light);
       color: var(--warning);
       border-color: #fcd34d;
-    }
-    .btn-rate-good:hover {
-      background: var(--warning);
-      color: #fff;
     }
     .btn-rate-easy {
       background: var(--success-light);
       color: var(--success);
       border-color: #86efac;
     }
-    .btn-rate-easy:hover {
-      background: var(--success);
-      color: #fff;
-    }
 
-    /* Bottom Navigation Controls */
+    /* Bottom Navigation Bar (Sticky Thumb-Reachable Bar) */
     .nav-bar {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       align-items: center;
       justify-content: space-between;
-      margin-top: 0.2rem;
+      position: sticky;
+      bottom: 0;
+      background: var(--bg);
+      padding: 0.3rem 0 calc(0.3rem + env(safe-area-inset-bottom));
+      z-index: 80;
     }
     .nav-btn {
       flex: 1;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
+      min-height: 48px;
+      padding: 0.75rem 0.6rem;
+      border-radius: 12px;
       border: none;
       font-family: var(--font-bn);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.15s;
+      touch-action: manipulation;
+    }
+    .nav-btn:active {
+      transform: scale(0.96);
     }
     .nav-btn-prev {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       color: var(--text-main);
     }
-    .nav-btn-prev:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
     .nav-btn-flip {
       background: var(--accent);
       color: #ffffff;
-      flex: 1.3;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-    }
-    .nav-btn-flip:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
+      flex: 1.4;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
     }
     .nav-btn-next {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       color: var(--text-main);
     }
-    .nav-btn-next:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+
+    /* Animated Heart/Star Burst Overlay */
+    .burst-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 4rem;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    }
+    .burst-overlay.show {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 1;
     }
 
-    /* Floating / Modal Shortcut Help */
+    /* Keyboard Shortcuts Modal */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -629,8 +699,8 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 14px;
-      padding: 1.5rem;
-      max-width: 480px;
+      padding: 1.3rem;
+      max-width: 440px;
       width: 100%;
       box-shadow: var(--shadow-lg);
     }
@@ -639,58 +709,103 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--card-border);
-      padding-bottom: 0.8rem;
-      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
     }
     .modal-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 800;
-      color: var(--primary);
     }
     .shortcut-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
     }
     .shortcut-item {
-      background: var(--bg);
-      padding: 6px 10px;
-      border-radius: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 0.85rem;
     }
     .kbd {
-      background: var(--card-bg);
+      background: var(--bg);
       border: 1px solid var(--card-border);
       padding: 2px 7px;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-size: 0.75rem;
       font-family: monospace;
       font-weight: 700;
-      font-size: 0.82rem;
     }
 
-    /* Empty state */
-    .empty-state {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: var(--card-bg);
-      border: 1px dashed var(--card-border);
-      border-radius: 12px;
-      display: none;
-    }
-
-    /* Mobile Responsive */
+    /* Mobile View Media Queries */
     @media (max-width: 640px) {
-      .app-header { padding: 0.6rem 0.8rem; }
-      .brand-title h1 { font-size: 1rem; }
-      .brand-title p { display: none; }
-      .card-stage, .card-face, .flashcard { min-height: 320px; }
-      .q-text, .a-text { font-size: 1.15rem; }
-      .ctrl-row-2 { flex-direction: column; align-items: stretch; }
-      .search-box { max-width: 100%; }
-      .nav-btn { padding: 0.75rem 0.5rem; font-size: 0.88rem; }
+      .app-header {
+        padding: 0.45rem 0.65rem;
+      }
+      .brand-title p {
+        display: none;
+      }
+      .brand-title h1 {
+        font-size: 0.95rem;
+      }
+      .tool-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.95rem;
+      }
+      .link-btn {
+        height: 34px;
+        padding: 4px 7px;
+        font-size: 0.75rem;
+      }
+      .app-main {
+        padding: 0.4rem 0.5rem 0.8rem;
+        gap: 0.4rem;
+      }
+      .card-stage {
+        min-height: 290px;
+        height: calc(100dvh - 240px);
+        max-height: 440px;
+        margin: 0.1rem 0;
+      }
+      .card-face {
+        padding: 0.9rem 0.85rem 0.75rem;
+        border-radius: 14px;
+      }
+      .q-text {
+        font-size: 1.15rem;
+        line-height: 1.45;
+      }
+      .a-text {
+        font-size: 1.12rem;
+        line-height: 1.48;
+      }
+      .sec-pill {
+        max-width: 125px;
+      }
+      .btn-rate {
+        font-size: 0.78rem;
+        padding: 0.5rem 0.2rem;
+      }
+      .nav-btn {
+        min-height: 46px;
+        padding: 0.65rem 0.4rem;
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-height: 600px) {
+      /* Ultra-short landscape phones */
+      .card-stage {
+        min-height: 220px;
+        height: 52vh;
+      }
+      .app-header {
+        padding: 0.3rem 0.6rem;
+      }
+      .progress-strip {
+        padding: 0.3rem 0.6rem;
+      }
     }
   </style>
 </head>
@@ -701,27 +816,52 @@
     <div class="brand-wrap">
       <div class="brand-icon">⚡</div>
       <div class="brand-title">
-        <h1>ঢাবি ‘খ’ ইউনিট: ২০০০ জিকে ফ্ল্যাশ-কার্ড</h1>
-        <p>জুবায়ের'স জিকে স্মার্ট স্পেসড রিপিটেশন ও সেলফ-টেস্ট অ্যাপ</p>
+        <h1>ঢাবি ‘খ’ ২০০০ জিকে ফ্ল্যাশ-কার্ড</h1>
+        <p>জুবায়ের'স জিকে স্মার্ট স্পেসড রিপিটেশন অ্যাপ</p>
       </div>
     </div>
     <div class="header-tools">
-      <button class="tool-btn" id="btn-sound" onclick="toggleSound()" title="সাউন্ড টগল (On/Off)">🔔</button>
+      <button class="tool-btn" id="btn-sound" onclick="toggleSound()" title="সাউন্ড টগল">🔔</button>
       <button class="tool-btn" id="btn-theme" onclick="toggleTheme()" title="ডার্ক/লাইট থিম">🌓</button>
-      <button class="tool-btn" onclick="toggleShortcutsModal()" title="কীবোর্ড শর্টকাট">⌨️</button>
+      <button class="tool-btn" id="btn-drawer" onclick="toggleDrawer()" title="ফিল্টার ও সার্চ">⚙️</button>
+      <button class="tool-btn" onclick="toggleShortcutsModal()" title="শর্টকাট গাইড">⌨️</button>
       <a href="du_b_unit_gk_top_2000.html" class="link-btn" title="৩-কলাম টেবিল ভিউ">📊 টেবিল</a>
-      <a href="index.html" class="link-btn" title="হোমপেজ">🏠 হোম</a>
+      <a href="index.html" class="link-btn" title="হোমপেজ">🏠</a>
     </div>
   </header>
 
   <!-- Main Flashcard Workspace -->
   <main class="app-main">
 
-    <!-- Controls & Filter Panel -->
-    <section class="controls-panel">
-      
-      <!-- Row 1: Part & Section Dropdowns -->
-      <div class="ctrl-row-1">
+    <!-- Top Progress Strip & Direct Jump -->
+    <div class="progress-strip">
+      <div class="progress-meta">
+        <span class="count-stat" id="progress-text">কার্ড ১ / ২০০০ (০%)</span>
+        <div class="jump-wrap">
+          <span style="font-size: 0.74rem; color: var(--text-muted);">যান:</span>
+          <input type="number" id="jump-val" class="jump-input" placeholder="নং" min="1" max="2000">
+          <button class="jump-btn" onclick="jumpToCard()">যান</button>
+        </div>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Quick Filter Chips Carousel (Horizontally Scrollable) -->
+    <div class="filter-chips-row">
+      <button class="chip active" id="chip-all" onclick="setFilter('all')">সবগুলো <span class="chip-badge" id="count-all">2000</span></button>
+      <button class="chip" id="chip-starred" onclick="setFilter('starred')">⭐ স্টার <span class="chip-badge" id="count-starred">0</span></button>
+      <button class="chip" id="chip-hard" onclick="setFilter('hard')">❌ কঠিন <span class="chip-badge" id="count-hard">0</span></button>
+      <button class="chip" id="chip-mastered" onclick="setFilter('mastered')">✅ মুখস্থ <span class="chip-badge" id="count-mastered">0</span></button>
+      <button class="chip" id="btn-shuffle" onclick="toggleShuffle()" title="শাফেল মোড">🔀 শাফেল</button>
+      <button class="chip" id="btn-autoplay" onclick="toggleAutoPlay()" title="অটোপ্লে মোড">▶️ অটোপ্লে</button>
+      <button class="chip chip-toggle" id="btn-drawer-chip" onclick="toggleDrawer()">📂 বিষয় ফিল্টার ▾</button>
+    </div>
+
+    <!-- Collapsible Filter & Search Drawer (Tap '📂 বিষয় ফিল্টার' or '⚙️' to open) -->
+    <div class="filter-drawer collapsed" id="filter-drawer">
+      <div class="drawer-row-1">
         <div class="select-wrap">
           <select id="part-select" class="select-input" onchange="onPartChange()">
             <option value="0">📚 সমগ্র ২০০০ প্রশ্ন (All 2,000 Cards)</option>
@@ -741,50 +881,25 @@
           </select>
         </div>
       </div>
-
-      <!-- Row 2: Study Filter Chips & Search -->
-      <div class="ctrl-row-2">
-        <div class="filter-chips">
-          <button class="chip active" id="chip-all" onclick="setFilter('all')">সবগুলো <span class="chip-badge" id="count-all">2000</span></button>
-          <button class="chip" id="chip-starred" onclick="setFilter('starred')">⭐ স্টার <span class="chip-badge" id="count-starred">0</span></button>
-          <button class="chip" id="chip-hard" onclick="setFilter('hard')">❌ কঠিন <span class="chip-badge" id="count-hard">0</span></button>
-          <button class="chip" id="chip-mastered" onclick="setFilter('mastered')">✅ মুখস্থ <span class="chip-badge" id="count-mastered">0</span></button>
-          <button class="chip" id="btn-shuffle" onclick="toggleShuffle()" title="শাফেল মোড">🔀 শাফেল</button>
-          <button class="chip" id="btn-autoplay" onclick="toggleAutoPlay()" title="অটোপ্লে মোড">▶️ অটোপ্লে</button>
-        </div>
-        
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="search-input" class="search-input" placeholder="প্রশ্ন বা উত্তর খুঁজুন..." oninput="onSearch()">
-        </div>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" class="search-input" placeholder="প্রশ্ন বা উত্তর দিয়ে খুঁজুন..." oninput="onSearch()">
       </div>
-
-      <!-- Row 3: Progress Bar & Direct Jump -->
-      <div class="progress-wrap">
-        <div class="progress-meta">
-          <span class="count-stat" id="progress-text">কার্ড ১ / ২০০০</span>
-          <div class="jump-wrap">
-            <span style="font-size: 0.78rem; color: var(--text-muted);">কার্ডে যান:</span>
-            <input type="number" id="jump-val" class="jump-input" placeholder="নং" min="1" max="2000">
-            <button class="jump-btn" onclick="jumpToCard()">যান</button>
-          </div>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="progress-bar"></div>
-        </div>
-      </div>
-
-    </section>
+    </div>
 
     <!-- Empty State -->
     <div class="empty-state" id="empty-state">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📭</div>
-      <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem;">কোনো কার্ড পাওয়া যায়নি!</h3>
-      <p style="font-size: 0.88rem; color: var(--text-muted);">আপনার ফিল্টার বা সার্চ অনুযায়ী কোনো প্রশ্ন নেই। ফিল্টার রিসেট করতে "সবগুলো" চিপে ক্লিক করুন।</p>
+      <div style="font-size: 2.2rem; margin-bottom: 0.3rem;">📭</div>
+      <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem;">কোনো কার্ড পাওয়া যায়নি!</h3>
+      <p style="font-size: 0.82rem; color: var(--text-muted);">ফিল্টার রিসেট করতে "সবগুলো" বোতামে ক্লিক করুন।</p>
     </div>
 
     <!-- 3D Interactive Flashcard -->
     <div class="card-stage" id="card-stage" onclick="onCardClick(event)">
+      
+      <!-- Burst Animation Overlay for Double Tap / Star -->
+      <div class="burst-overlay" id="burst-overlay">⭐</div>
+
       <div class="flashcard" id="flashcard">
         
         <!-- FRONT FACE (Question) -->
@@ -805,7 +920,7 @@
 
           <div class="card-footer">
             <span class="flip-icon">🔄</span>
-            <span>উত্তর দেখতে কার্ডে ট্যাপ করুন বা স্পেসবার চাপুন [Space]</span>
+            <span>উত্তর দেখতে ট্যাপ করুন বা সোয়াইপ করুন [Space]</span>
           </div>
         </div>
 
@@ -827,15 +942,15 @@
           <!-- Rating Buttons on Back -->
           <div class="rating-bar" onclick="event.stopPropagation()">
             <button class="btn-rate btn-rate-hard" onclick="rateCard('hard')">
-              <span>❌ মনে নেই (কঠিন)</span>
+              <span>❌ কঠিন</span>
               <span class="key">[1]</span>
             </button>
             <button class="btn-rate btn-rate-good" onclick="rateCard('good')">
-              <span>⚠️ মোটামুটি</span>
+              <span>⚠️ ভালো</span>
               <span class="key">[2]</span>
             </button>
             <button class="btn-rate btn-rate-easy" onclick="rateCard('easy')">
-              <span>✅ মুখস্থ (সহজ)</span>
+              <span>✅ সহজ</span>
               <span class="key">[3]</span>
             </button>
           </div>
@@ -844,13 +959,13 @@
       </div>
     </div>
 
-    <!-- Bottom Navigation Bar -->
+    <!-- Bottom Navigation Bar (Sticky Thumb-Reachable) -->
     <div class="nav-bar">
       <button class="nav-btn nav-btn-prev" onclick="prevCard()" title="পূর্ববর্তী কার্ড [←]">
         <span>⬅ পূর্ববর্তী</span>
       </button>
       <button class="nav-btn nav-btn-flip" onclick="flipCard()" title="কার্ড উল্টান [Space]">
-        <span>🔄 উল্টান / উত্তর দেখুন</span>
+        <span>🔄 উল্টান / উত্তর</span>
       </button>
       <button class="nav-btn nav-btn-next" onclick="nextCard()" title="পরবর্তী কার্ড [→]">
         <span>পরবর্তী ➡</span>
@@ -863,14 +978,14 @@
   <div class="modal-overlay" id="shortcuts-modal" onclick="toggleShortcutsModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <div class="modal-head">
-        <h3 class="modal-title">⌨️ কীবোর্ড শর্টকাট গাইড</h3>
+        <h3 class="modal-title">⌨️ কীবোর্ড ও টাচ গাইড</h3>
         <button class="tool-btn" onclick="toggleShortcutsModal()">✕</button>
       </div>
       <div class="shortcut-list">
-        <div class="shortcut-item"><span>কার্ড উল্টানো / ফ্লিপ</span> <span class="kbd">Space / Enter</span></div>
-        <div class="shortcut-item"><span>পরবর্তী কার্ড</span> <span class="kbd">→ / J</span></div>
-        <div class="shortcut-item"><span>পূর্ববর্তী কার্ড</span> <span class="kbd">← / K</span></div>
-        <div class="shortcut-item"><span>স্টার / বুকমার্ক</span> <span class="kbd">S</span></div>
+        <div class="shortcut-item"><span>কার্ড উল্টানো / ফ্লিপ</span> <span class="kbd">Space / ট্যাপ</span></div>
+        <div class="shortcut-item"><span>পরবর্তী কার্ড</span> <span class="kbd">→ / বামে সোয়াইপ</span></div>
+        <div class="shortcut-item"><span>পূর্ববর্তী কার্ড</span> <span class="kbd">← / ডানে সোয়াইপ</span></div>
+        <div class="shortcut-item"><span>স্টার / বুকমার্ক</span> <span class="kbd">S / ডাবল ট্যাপ</span></div>
         <div class="shortcut-item"><span>কঠিন রেটিং (Hard)</span> <span class="kbd">1</span></div>
         <div class="shortcut-item"><span>মোটামুটি রেটিং</span> <span class="kbd">2</span></div>
         <div class="shortcut-item"><span>সহজ / মুখস্থ (Easy)</span> <span class="kbd">3</span></div>
@@ -893,6 +1008,10 @@
     let soundEnabled = true;
     let currentFilter = 'all';
 
+    // Touch gesture state
+    let isSwiping = false;
+    let lastTapTime = 0;
+
     // LocalStorage Keys
     const LS_STARRED = 'du_gk_starred';
     const LS_HARD = 'du_gk_hard';
@@ -905,7 +1024,7 @@
     let hardSet = new Set(JSON.parse(localStorage.getItem(LS_HARD) || '[]'));
     let masteredSet = new Set(JSON.parse(localStorage.getItem(LS_MASTERED) || '[]'));
 
-    // Audio synthesizer
+    // Audio tone synthesizer
     let audioCtx = null;
     function playTone(freq, type = 'sine', duration = 0.08) {
       if (!soundEnabled) return;
@@ -924,14 +1043,27 @@
       } catch (e) {}
     }
 
+    // Native Mobile Haptic Vibration
+    function triggerHaptic(type = 'light') {
+      if ('vibrate' in navigator) {
+        try {
+          if (type === 'light') navigator.vibrate(12);
+          else if (type === 'medium') navigator.vibrate(22);
+          else if (type === 'double') navigator.vibrate([15, 40, 15]);
+        } catch(e) {}
+      }
+    }
+
     // Init App
     window.addEventListener('DOMContentLoaded', () => {
       // Init theme
       const savedTheme = localStorage.getItem(LS_THEME);
       if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
+        updateMetaTheme(savedTheme);
       } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.setAttribute('data-theme', 'dark');
+        updateMetaTheme('dark');
       }
 
       // Init sound
@@ -948,14 +1080,30 @@
       }
 
       renderCard();
-      setupTouchSwipe();
+      setupTouchGestures();
     });
+
+    function updateMetaTheme(theme) {
+      const meta = document.getElementById('meta-theme-color');
+      if (meta) {
+        meta.setAttribute('content', theme === 'dark' ? '#090d16' : '#1e3a8a');
+      }
+    }
 
     function updateCounts() {
       document.getElementById('count-all').innerText = ALL_CARDS.length;
       document.getElementById('count-starred').innerText = starredSet.size;
       document.getElementById('count-hard').innerText = hardSet.size;
       document.getElementById('count-mastered').innerText = masteredSet.size;
+    }
+
+    function toggleDrawer() {
+      const drawer = document.getElementById('filter-drawer');
+      const btn = document.getElementById('btn-drawer');
+      const isCollapsed = drawer.classList.toggle('collapsed');
+      btn.classList.toggle('active', !isCollapsed);
+      playTone(isCollapsed ? 340 : 480);
+      triggerHaptic('light');
     }
 
     function onPartChange() {
@@ -987,6 +1135,8 @@
         const el = document.getElementById('chip-' + t);
         if (el) el.classList.toggle('active', t === type);
       });
+      playTone(420);
+      triggerHaptic('light');
       applyFilters();
     }
 
@@ -1028,6 +1178,7 @@
       isShuffled = !isShuffled;
       document.getElementById('btn-shuffle').classList.toggle('active', isShuffled);
       playTone(isShuffled ? 520 : 380);
+      triggerHaptic('medium');
       if (isShuffled) {
         deck.sort(() => Math.random() - 0.5);
       } else {
@@ -1091,6 +1242,8 @@
     }
 
     function onCardClick(e) {
+      // Ignore click if user was swiping or double tapping
+      if (isSwiping) return;
       flipCard();
     }
 
@@ -1099,6 +1252,7 @@
       isFlipped = !isFlipped;
       document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
       playTone(isFlipped ? 600 : 440);
+      triggerHaptic('light');
     }
 
     function nextCard() {
@@ -1111,6 +1265,7 @@
       isFlipped = false;
       document.getElementById('flashcard').classList.remove('flipped');
       playTone(480);
+      triggerHaptic('light');
       renderCard();
     }
 
@@ -1124,23 +1279,35 @@
       isFlipped = false;
       document.getElementById('flashcard').classList.remove('flipped');
       playTone(360);
+      triggerHaptic('light');
       renderCard();
     }
 
     function toggleStar(e) {
-      e.stopPropagation();
+      if (e) e.stopPropagation();
       if (deck.length === 0) return;
       const card = deck[currentIndex];
       if (starredSet.has(card.id)) {
         starredSet.delete(card.id);
         playTone(320);
+        triggerHaptic('light');
       } else {
         starredSet.add(card.id);
         playTone(750);
+        triggerHaptic('double');
+        triggerStarBurst();
       }
       localStorage.setItem(LS_STARRED, JSON.stringify([...starredSet]));
       updateCounts();
       renderCard();
+    }
+
+    function triggerStarBurst() {
+      const burst = document.getElementById('burst-overlay');
+      if (burst) {
+        burst.classList.add('show');
+        setTimeout(() => { burst.classList.remove('show'); }, 500);
+      }
     }
 
     function rateCard(rating) {
@@ -1151,14 +1318,17 @@
         hardSet.add(card.id);
         masteredSet.delete(card.id);
         playTone(280, 'sawtooth');
+        triggerHaptic('medium');
       } else if (rating === 'easy') {
         masteredSet.add(card.id);
         hardSet.delete(card.id);
         playTone(680, 'sine');
+        triggerHaptic('double');
       } else {
         // good / neutral
         hardSet.delete(card.id);
         playTone(450, 'triangle');
+        triggerHaptic('light');
       }
 
       localStorage.setItem(LS_HARD, JSON.stringify([...hardSet]));
@@ -1178,6 +1348,8 @@
       document.getElementById('flashcard').classList.remove('flipped');
       renderCard();
       document.getElementById('jump-val').value = '';
+      playTone(500);
+      triggerHaptic('light');
     }
 
     function toggleAutoPlay() {
@@ -1188,10 +1360,12 @@
         btn.classList.remove('active');
         btn.innerText = '▶️ অটোপ্লে';
         playTone(300);
+        triggerHaptic('light');
       } else {
         btn.classList.add('active');
         btn.innerText = '⏸️ বিরতি';
         playTone(650);
+        triggerHaptic('medium');
         autoPlayTimer = setInterval(() => {
           if (!isFlipped) {
             flipCard();
@@ -1202,8 +1376,8 @@
       }
     }
 
-    // Touch Swipe Detection
-    function setupTouchSwipe() {
+    // Advanced Touch Gestures (Swipe, Vertical Flick, Double Tap)
+    function setupTouchGestures() {
       const stage = document.getElementById('card-stage');
       let touchStartX = 0;
       let touchStartY = 0;
@@ -1211,21 +1385,52 @@
       stage.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
+        isSwiping = false;
+      }, { passive: true });
+
+      stage.addEventListener('touchmove', e => {
+        const diffX = e.changedTouches[0].screenX - touchStartX;
+        const diffY = e.changedTouches[0].screenY - touchStartY;
+        if (Math.abs(diffX) > 15 && Math.abs(diffX) > Math.abs(diffY)) {
+          isSwiping = true;
+        }
       }, { passive: true });
 
       stage.addEventListener('touchend', e => {
         const diffX = e.changedTouches[0].screenX - touchStartX;
         const diffY = e.changedTouches[0].screenY - touchStartY;
-        if (Math.abs(diffX) > 45 && Math.abs(diffY) < 60) {
+        
+        // 1. Horizontal swipe detection
+        if (Math.abs(diffX) > 42 && Math.abs(diffY) < 65) {
+          isSwiping = true;
           if (diffX < 0) nextCard();
           else prevCard();
+          setTimeout(() => { isSwiping = false; }, 280);
+          return;
         }
+
+        // 2. Vertical flick up to flip
+        if (diffY < -55 && Math.abs(diffX) < 45) {
+          isSwiping = true;
+          flipCard();
+          setTimeout(() => { isSwiping = false; }, 280);
+          return;
+        }
+
+        // 3. Double-tap to star
+        const now = new Date().getTime();
+        const tapInterval = now - lastTapTime;
+        if (tapInterval < 320 && tapInterval > 60) {
+          isSwiping = true;
+          toggleStar();
+          setTimeout(() => { isSwiping = false; }, 280);
+        }
+        lastTapTime = now;
       }, { passive: true });
     }
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', e => {
-      // Ignore if typing in inputs
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
 
       if (e.code === 'Space' || e.code === 'Enter') {
@@ -1239,7 +1444,7 @@
         prevCard();
       } else if (e.key === 's' || e.key === 'S') {
         e.preventDefault();
-        toggleStar(e);
+        toggleStar();
       } else if (e.key === '1') {
         e.preventDefault();
         rateCard('hard');
@@ -1260,7 +1465,9 @@
       const target = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', target);
       localStorage.setItem(LS_THEME, target);
+      updateMetaTheme(target);
       playTone(target === 'dark' ? 350 : 550);
+      triggerHaptic('light');
     }
 
     function toggleSound() {
@@ -1268,6 +1475,7 @@
       localStorage.setItem(LS_SOUND, soundEnabled.toString());
       updateSoundBtn();
       if (soundEnabled) playTone(600);
+      triggerHaptic('light');
     }
 
     function updateSoundBtn() {
@@ -1279,6 +1487,8 @@
     function toggleShortcutsModal() {
       const modal = document.getElementById('shortcuts-modal');
       modal.classList.toggle('open');
+      playTone(400);
+      triggerHaptic('light');
     }
   </script>
 
